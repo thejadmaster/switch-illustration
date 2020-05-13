@@ -1,0 +1,175 @@
+/* 
+ * Inspired By fossheim in https://codepen.io/fossheim/pen/jObGxQQ 
+ */
+
+@import "styles/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+}
+
+body {
+  background-image: radial-gradient(
+    circle,
+    $lighting_secondary 0%,
+    $lighting_40 60%,
+    $lighting_main 100%
+  );
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch {
+  z-index: 10;
+  display: flex;
+  height: 400px;
+  width: 940px;
+}
+
+.screen-container {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 73.34%;
+  background-color: $main;
+  box-shadow: inset 0px 5px 5px lighten($main, 35%),
+    // Top
+      inset 0 -5px 7px darken($main, 35%); // Bottom
+  border-right: 1px solid $darkest;
+  border-left: 2px solid $darkest;
+
+  .glass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    width: 95%;
+    margin: 10px auto;
+    background-color: lighten($darkest, 10%);
+    box-shadow: inset 0 0 1px 2px $darkest,
+      // Shadow Outline
+        inset 0 -3px 4px $darkest,
+      // Bottom Bezel
+        inset 3px 1.5px 1.5px lighten($darkest, 15%),
+      // Left Bezel
+        inset -3px 3px 4px lighten($darkest, 25%),
+      // Right Bezel
+        inset 0px 5px 4px lighten($darkest, 25%); // Top Bezel
+    border-radius: 10px;
+
+    .screen {
+      height: 320px;
+      width: 566px;
+      background-image: linear-gradient(60deg, darken($main, 10%), $button);
+    }
+  }
+
+  .volume {
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 3px;
+    top: -2px;
+    background-image: linear-gradient(lighten($main, 20%), $darkest);
+    border-radius: 2px 2px 0px 0px;
+
+    &.left {
+      left: 60px;
+    }
+    &.right {
+      left: 96px;
+    }
+  }
+}
+
+.controller {
+  height: 100%;
+  width: 13.34%;
+  position: relative;
+
+  &.left {
+    background-image: linear-gradient(
+      90deg,
+      darken($controllerLeft, 10%),
+      darken($controllerLeft, 5%) 70%,
+      $controllerLeft 100%
+    );
+    border-radius: 90px 2px 2px 90px;
+    box-shadow: inset -1px 0px 3px lighten($controllerLeft, 10%),
+      // Right Bezel
+        inset 0px -6px 5px darken($controllerLeft, 15%),
+      // Bottom Bezel
+        inset 3px -4px 6px darken($controllerLeft, 25%),
+      // Left Bezel
+        inset -1.5px 5px 4px lighten($controllerLeft, 25%); //Top Bezel
+  }
+
+  &.right {
+    background-image: linear-gradient(
+      90deg,
+      $controllerRight,
+      lighten($controllerRight, 5%) 30%,
+      lighten($controllerRight, 10%) 100%
+    );
+    border-radius: 2px 90px 90px 2px;
+    box-shadow: inset -5px 3px 5px lighten($controllerRight, 20%),
+      // Right Bezel
+        inset 0px -6px 5px darken($controllerRight, 15%),
+      // Bottom Bezel
+        inset 1px 0px 3px darken($controllerRight, 25%),
+      // Left Bezel
+        inset 0px 5px 6px lighten($controllerRight, 25%); //Top Bezel
+  }
+
+  .bumper {
+    display: block;
+    position: absolute;
+    z-index: -5;
+    top: -4px;
+    background-color: $button;
+    width: 85%;
+    height: 70px;
+
+    &.left {
+      // border-radius: 90px 10px 20px 80px / 80px 45px 55px 20px;
+      // 90% 10% 20% 80% / 60% 45% 55% 40%
+      border-radius: 95px 4px 0 4px / 70px 4px 0 4px;
+      box-shadow: inset -1px 1px 3px lighten($button, 25%);
+      left: 2px;
+    }
+
+    &.right {
+      // border-radius: 2px 90px 2px 2px;
+      border-radius: 4px 95px 0 4px / 4px 70px 0 4px;
+      box-shadow: inset 0px 1px 3px lighten($button, 25%),
+        inset -1px 0px 3px lighten($button, 25%);
+      right: 2px;
+    }
+  }
+}
+
+.switch-shadow {
+  z-index: 1;
+  width: 800px;
+  height: 70px;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: black;
+  border-radius: 30px 180px;
+  opacity: 0.15;
+  box-shadow: 0px 0px 30px 30px black;
+}
