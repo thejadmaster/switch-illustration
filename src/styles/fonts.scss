@@ -1,0 +1,29 @@
+$fontsPath: "fonts/";
+
+@font-face {
+  font-family: "Nintendo-Switch-UI";
+  src: url($fontsPath+"Nintendo-Switch-UI/Nintendo-Switch-UI.ttf.woff")
+      format("woff"),
+    url($fontsPath+"Nintendo-Switch-UI/Nintendo-Switch-UI.ttf.svg#Nintendo-Switch-UI")
+      format("svg"),
+    url($fontsPath+"Nintendo-Switch-UI/Nintendo-Switch-UI.ttf.eot"),
+    url($fontsPath+"Nintendo-Switch-UI/Nintendo-Switch-UI.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url($fontsPath+"Lato/Lato-Black.ttf"),
+    url($fontsPath+"Lato/Lato-BlackItalic.ttf"),
+    url($fontsPath+"Lato/Lato-Bold.ttf"),
+    url($fontsPath+"Lato/Lato-BoldItalic.ttf"),
+    url($fontsPath+"Lato/Lato-Italic.ttf"),
+    url($fontsPath+"Lato/Lato-Light.ttf"),
+    url($fontsPath+"Lato/Lato-LightItalic.ttf"),
+    url($fontsPath+"Lato/Lato-Regular.ttf"),
+    url($fontsPath+"Lato/Lato-Thin.ttf"),
+    url($fontsPath+"Lato/Lato-ThinItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
