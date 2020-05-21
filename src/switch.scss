@@ -4,6 +4,7 @@
 
 @import "styles/fonts.scss";
 @import "styles/variables.scss";
+@import "styles/buttons.scss";
 
 * {
   padding: 0;
@@ -14,14 +15,15 @@
 html,
 body {
   width: 100vw;
+  height: 100vh;
 }
 
 body {
   background-image: radial-gradient(
     circle,
-    $lighting_secondary 0%,
-    $lighting_40 60%,
-    $lighting_main 100%
+    $lightingSecondary 0%,
+    $lighting40 60%,
+    $lightingMain 100%
   );
 }
 
@@ -98,8 +100,8 @@ body {
 }
 
 .controller {
-  height: 100%;
   width: 13.34%;
+  height: 100%;
   position: relative;
 
   &.left {

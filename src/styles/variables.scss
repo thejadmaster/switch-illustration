@@ -1,16 +1,17 @@
 // Lighting
-$lighting_main: #aaa;
-$lighting_secondary: white;
-$lighting_40: mix($lighting_main, $lighting_secondary, 40);
-$lighting_70: mix($lighting_main, $lighting_secondary, 70);
+$lightingMain: #aaa;
+$lightingSecondary: white;
+$lighting40: mix($lightingMain, $lightingSecondary, 40);
+$lighting70: mix($lightingMain, $lightingSecondary, 70);
 
 // Main Body
 $main: #252222;
 $button: #283333;
+$buttonText: #bba;
 $darkest: rgba(0, 0, 0, 1);
 
 // Controller Left
-$controllerLeft: rgba(0, 0, 255, 1);
+$controllerLeft: rgba(48, 228, 255, 1);
 
 // Controller Right
-$controllerRight: rgba(255, 0, 0, 1);
+$controllerRight: rgba(255, 30, 30, 1);
