@@ -119,6 +119,66 @@ body {
         inset 3px -4px 6px darken($controllerLeft, 25%),
       // Left Bezel
         inset -1.5px 5px 4px lighten($controllerLeft, 25%); //Top Bezel
+
+    .minus {
+      position: absolute;
+      width: 21px;
+      height: 7px;
+      top: 32px;
+      right: 8px;
+      background-color: $button;
+      box-shadow: -0.5px 0.5px 1px $darkest, inset -1px 1px 0px $lightingMain;
+    }
+
+    .joystick {
+    }
+
+    span {
+      width: 0;
+      height: 0;
+    }
+
+    .button-container {
+      top: 155px;
+      left: 20px;
+    }
+
+    .button.up {
+      margin: auto;
+      span {
+        border-left: 4.8px solid transparent;
+        border-right: 4.8px solid transparent;
+        border-bottom: 8px solid $darkest;
+        margin-bottom: 2px;
+      }
+    }
+    .button.right {
+      align-self: center;
+      span {
+        border-top: 4.8px solid transparent;
+        border-bottom: 4.8px solid transparent;
+        border-left: 8px solid $darkest;
+        margin-left: 2px;
+      }
+    }
+    .button.down {
+      margin: auto;
+      span {
+        border-left: 4.8px solid transparent;
+        border-right: 4.8px solid transparent;
+        border-top: 8px solid $darkest;
+        margin-top: 2px;
+      }
+    }
+    .button.left {
+      align-self: center;
+      span {
+        border-top: 4.8px solid transparent;
+        border-bottom: 4.8px solid transparent;
+        border-right: 8px solid $darkest;
+        margin-right: 2px;
+      }
+    }
   }
 
   &.right {
@@ -136,6 +196,72 @@ body {
         inset 1px 0px 3px darken($controllerRight, 25%),
       // Left Bezel
         inset 0px 5px 6px lighten($controllerRight, 25%); //Top Bezel
+
+    .plus-container {
+      position: relative;
+      z-index: 10;
+      top: 32px;
+      left: 8px;
+    }
+
+    .plus:before {
+      position: absolute;
+      content: "";
+      z-index: -1;
+      width: 7px;
+      height: 21px;
+      left: 7px;
+      top: -7px;
+      background-color: $button;
+      box-shadow: -0.5px 0.5px 0.5px $darkest;
+    }
+
+    .plus {
+      position: relative;
+      width: 21px;
+      height: 7px;
+      background-color: $button;
+      box-shadow: inset 1px -1px 0px $darkest,
+        inset -0.5px 0.5px 0px $lightingMain;
+    }
+
+    .plus:after {
+      position: absolute;
+      content: "";
+      width: 7px;
+      height: 21px;
+      left: 7px;
+      top: -7px;
+      background-color: $button;
+      box-shadow: inset 0px 0.5px 0px $lightingMain;
+    }
+
+    .button-container {
+      top: 55px;
+      right: 20px;
+      color: $buttonText;
+      font-family: "Lato", "Nintendo-Switch-UI";
+      font-size: 0.85em;
+      font-weight: 400;
+      font-smooth: antialiased;
+
+      span {
+        padding-bottom: 2px;
+      }
+    }
+
+    .button.x {
+      margin: auto;
+    }
+    .button.a {
+      align-self: center;
+    }
+    .button.b {
+      margin: auto;
+    }
+    .button.y {
+      align-self: center;
+    }
   }
 
   .bumper {
