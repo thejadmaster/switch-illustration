@@ -11,10 +11,7 @@ let mix = require("laravel-mix");
  |
  */
 
-mix
-  .js("src/switch.js", "dist")
-  .sass("src/app.scss", "dist")
-  .setPublicPath("dist");
+mix.js("src/switch.js", "dist").setPublicPath("dist");
 
 // Full API
 // mix.js(src, output);
