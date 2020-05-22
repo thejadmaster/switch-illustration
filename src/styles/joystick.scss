@@ -1,0 +1,42 @@
+.joystick {
+  background-color: $button;
+
+  &.outer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1px $darkest,
+      // Outter Shadow
+        -0.5px 1px 1px $darkest,
+      // Lower Left Drop Shadow
+        inset 1.5px 1px 1.5px lighten($darkest, 10%),
+      inset -2px -3px 3px darken($button, 10%),
+      // Lower Right - Dark
+        inset 2px -3px 4px darken($button, 10%),
+      // Lower Left - Dark
+        inset 3px 2px 3px $button,
+      inset -1.5px 3px 8px lighten($button, 70%),
+      inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%),
+      // Bottom Curve
+        inset -2px 9px 30px lighten(
+          transparentize($darkest, 0.5),
+          40%
+        ); // Top Curve
+  }
+
+  &.inner {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-image: radial-gradient(
+      at 65% 20%,
+      lighten($button, 15%),
+      darken($button, 10%)
+    );
+  }
+}

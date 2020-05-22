@@ -5,6 +5,7 @@
 @import "styles/fonts.scss";
 @import "styles/variables.scss";
 @import "styles/buttons.scss";
+@import "styles/joystick.scss";
 
 * {
   padding: 0;
@@ -130,7 +131,10 @@ body {
       box-shadow: -0.5px 0.5px 1px $darkest, inset -1px 1px 0px $lightingMain;
     }
 
-    .joystick {
+    .joystick.outer {
+      position: absolute;
+      top: 80px;
+      right: 32px;
     }
 
     span {
@@ -261,6 +265,12 @@ body {
     }
     .button.y {
       align-self: center;
+    }
+
+    .joystick.outer {
+      position: absolute;
+      top: 180px;
+      left: 35px;
     }
   }
 
