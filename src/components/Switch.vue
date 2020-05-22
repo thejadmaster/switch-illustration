@@ -3,7 +3,7 @@
     <div class="switch" aria-label="Switch Web Illustration Exercise">
       <div class="controller left">
         <div class="minus"></div>
-        <div class="joystick"></div>
+        <div class="joystick outer"><div class="joystick inner"></div></div>
         <div class="button-container">
           <div class="row">
             <div class="button up"><span></span></div>
@@ -42,7 +42,7 @@
             <div class="button b"><span>B</span></div>
           </div>
         </div>
-        <div class="joystick"></div>
+        <div class="joystick outer"><div class="joystick inner"></div></div>
         <div class="home"></div>
         <div class="bumper right"></div>
       </div>
