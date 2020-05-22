@@ -13,11 +13,14 @@
       // Outter Shadow
         -0.5px 1px 1px $darkest,
       // Lower Left Drop Shadow
-        inset 1.5px 1px 1.5px lighten($darkest, 10%),
-      inset -2px -3px 3px darken($button, 10%),
+        inset 1px 0.75px 1px darken($button, 10%),
+      // Upper Left - Dark,
+        inset -1.5px -2px 3px lighten($darkest, 15%),
       // Lower Right - Dark
         inset 2px -3px 4px darken($button, 10%),
       // Lower Left - Dark
+        inset -1px 1.5px 3px $button,
+      // Upper Right - Dark
         inset 3px 2px 3px $button,
       inset -1.5px 3px 8px lighten($button, 70%),
       inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%),
@@ -30,13 +33,14 @@
 
   &.inner {
     position: absolute;
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-image: radial-gradient(
       at 65% 20%,
       lighten($button, 15%),
-      darken($button, 10%)
+      darken($button, 10%) 80%,
+      darken($button, 15%) 100%
     );
   }
 }
