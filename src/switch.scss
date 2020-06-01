@@ -4,6 +4,7 @@
 
 @import "styles/fonts.scss";
 @import "styles/variables.scss";
+@import "styles/screen.scss";
 @import "styles/buttons.scss";
 @import "styles/joystick.scss";
 
@@ -46,62 +47,6 @@ body {
   display: flex;
   height: 400px;
   width: 940px;
-}
-
-.screen-container {
-  display: block;
-  position: relative;
-  height: 100%;
-  width: 73.34%;
-  background-color: $main;
-  box-shadow: inset 0px 5px 5px lighten($main, 35%),
-    // Top
-      inset 0 -5px 7px darken($main, 35%); // Bottom
-  border-right: 1px solid $darkest;
-  border-left: 2px solid $darkest;
-
-  .glass {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 380px;
-    width: 95%;
-    margin: 10px auto;
-    background-color: lighten($darkest, 10%);
-    box-shadow: inset 0 0 1px 2px $darkest,
-      // Shadow Outline
-        inset 0 -3px 4px $darkest,
-      // Bottom Bezel
-        inset 3px 1.5px 1.5px lighten($darkest, 15%),
-      // Left Bezel
-        inset -3px 3px 4px lighten($darkest, 25%),
-      // Right Bezel
-        inset 0px 5px 4px lighten($darkest, 25%); // Top Bezel
-    border-radius: 10px;
-
-    .screen {
-      height: 320px;
-      width: 566px;
-      background-image: linear-gradient(60deg, darken($main, 10%), $button);
-    }
-  }
-
-  .volume {
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 3px;
-    top: -2px;
-    background-image: linear-gradient(lighten($main, 20%), $darkest);
-    border-radius: 2px 2px 0px 0px;
-
-    &.left {
-      left: 60px;
-    }
-    &.right {
-      left: 96px;
-    }
-  }
 }
 
 .controller {
