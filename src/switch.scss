@@ -7,6 +7,7 @@
 @import "styles/screen.scss";
 @import "styles/buttons.scss";
 @import "styles/joystick.scss";
+@import "styles/bumper.scss";
 
 * {
   padding: 0;
@@ -238,32 +239,6 @@ body {
       position: absolute;
       top: 180px;
       left: 35px;
-    }
-  }
-
-  .bumper {
-    display: block;
-    position: absolute;
-    z-index: -5;
-    top: -4px;
-    background-color: $button;
-    width: 85%;
-    height: 70px;
-
-    &.left {
-      // border-radius: 90px 10px 20px 80px / 80px 45px 55px 20px;
-      // 90% 10% 20% 80% / 60% 45% 55% 40%
-      border-radius: 95px 4px 0 4px / 70px 4px 0 4px;
-      box-shadow: inset -1px 1px 3px lighten($button, 25%);
-      left: 2px;
-    }
-
-    &.right {
-      // border-radius: 2px 90px 2px 2px;
-      border-radius: 4px 95px 0 4px / 4px 70px 0 4px;
-      box-shadow: inset 0px 1px 3px lighten($button, 25%),
-        inset -1px 0px 3px lighten($button, 25%);
-      right: 2px;
     }
   }
 }
