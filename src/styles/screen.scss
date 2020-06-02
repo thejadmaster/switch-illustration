@@ -19,15 +19,16 @@
     width: 95%;
     margin: 10px auto;
     background-color: lighten($darkest, 10%);
-    box-shadow: inset 0 0 1px 2px $darkest,
-      // Shadow Outline
-        inset 0 -3px 4px $darkest,
-      // Bottom Bezel
-        inset 3px 1.5px 1.5px lighten($darkest, 15%),
-      // Left Bezel
-        inset -3px 3px 4px lighten($darkest, 25%),
-      // Right Bezel
-        inset 0px 5px 4px lighten($darkest, 25%); // Top Bezel
+    box-shadow: inset -0.5px 0.5px 1px $darkest,
+      inset 0.5px -0.5px lighten($darkest, 30%);
+    // Shadow Outline
+    // inset 0 -3px 4px $darkest,
+    // Bottom Bezel
+    // inset 3px 1.5px 1.5px lighten($darkest, 15%),
+    // Left Bezel
+    // inset -3px 3px 4px lighten($darkest, 25%),
+    // Right Bezel
+    // inset 0px 5px 4px lighten($darkest, 25%); // Top Bezel
     border-radius: 10px;
 
     .screen {
