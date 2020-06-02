@@ -6,14 +6,14 @@
         <div class="joystick outer"><div class="joystick inner"></div></div>
         <div class="button-container">
           <div class="row">
-            <div class="button up"><span></span></div>
+            <div class="button arrow up"></div>
           </div>
           <div class="row">
-            <div class="button left"><span></span></div>
-            <div class="button right"><span></span></div>
+            <div class="button arrow left"></div>
+            <div class="button arrow right"></div>
           </div>
           <div class="row">
-            <div class="button down"><span></span></div>
+            <div class="button arrow down"></div>
           </div>
         </div>
         <div class="screenshot"></div>
@@ -32,14 +32,14 @@
         <div class="plus-container"><div class="plus"></div></div>
         <div class="button-container">
           <div class="row">
-            <div class="button x"><span>X</span></div>
+            <div class="button letter x up"></div>
           </div>
           <div class="row">
-            <div class="button y"><span>Y</span></div>
-            <div class="button a"><span>A</span></div>
+            <div class="button letter y left"></div>
+            <div class="button letter a right"></div>
           </div>
           <div class="row">
-            <div class="button b"><span>B</span></div>
+            <div class="button letter b down"></div>
           </div>
         </div>
         <div class="joystick outer"><div class="joystick inner"></div></div>

@@ -93,51 +93,9 @@ body {
       right: 32px;
     }
 
-    span {
-      width: 0;
-      height: 0;
-    }
-
     .button-container {
       top: 155px;
       left: 20px;
-    }
-
-    .button.up {
-      margin: auto;
-      span {
-        border-left: 4.8px solid transparent;
-        border-right: 4.8px solid transparent;
-        border-bottom: 8px solid $darkest;
-        margin-bottom: 2px;
-      }
-    }
-    .button.right {
-      align-self: center;
-      span {
-        border-top: 4.8px solid transparent;
-        border-bottom: 4.8px solid transparent;
-        border-left: 8px solid $darkest;
-        margin-left: 2px;
-      }
-    }
-    .button.down {
-      margin: auto;
-      span {
-        border-left: 4.8px solid transparent;
-        border-right: 4.8px solid transparent;
-        border-top: 8px solid $darkest;
-        margin-top: 2px;
-      }
-    }
-    .button.left {
-      align-self: center;
-      span {
-        border-top: 4.8px solid transparent;
-        border-bottom: 4.8px solid transparent;
-        border-right: 8px solid $darkest;
-        margin-right: 2px;
-      }
     }
   }
 
@@ -211,28 +169,6 @@ body {
     .button-container {
       top: 55px;
       right: 20px;
-      color: $buttonText;
-      font-family: "Lato", "Nintendo-Switch-UI";
-      font-size: 0.85em;
-      font-weight: 500;
-      font-smooth: antialiased;
-
-      span {
-        padding-bottom: 2px;
-      }
-    }
-
-    .button.x {
-      margin: auto;
-    }
-    .button.a {
-      align-self: center;
-    }
-    .button.b {
-      margin: auto;
-    }
-    .button.y {
-      align-self: center;
     }
 
     .joystick.outer {
