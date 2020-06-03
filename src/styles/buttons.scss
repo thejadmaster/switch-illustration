@@ -103,6 +103,7 @@ $arrowBase: 8px solid $arrowColor;
   &.letter {
     &:after {
       margin-bottom: 2px;
+      margin-left: 1px;
     }
     &.a:after {
       content: "A";

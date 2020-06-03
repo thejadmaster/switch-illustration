@@ -29,7 +29,9 @@
       </div>
 
       <div class="controller right">
-        <div class="plus-container"><div class="plus"></div></div>
+        <div class="plus-container">
+          <div class="plus"></div>
+        </div>
         <div class="button-container">
           <div class="row">
             <div class="button letter x up"></div>
