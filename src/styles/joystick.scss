@@ -36,11 +36,37 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-image: radial-gradient(
-      at 65% 20%,
-      lighten($button, 15%),
-      darken($button, 10%) 80%,
-      darken($button, 15%) 100%
-    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $button;
+    background-size: 2.75px 100%, 100% 2.75px, 100%;
+    background-image: linear-gradient(
+        to bottom,
+        lighten($button, 35%),
+        $darkest
+      ),
+      linear-gradient(to left, lighten($button, 15%), lighten($darkest, 5%)),
+      linear-gradient(20deg, lighten($button, 25%), darken($button, 60%));
+    box-shadow: inset 0 -1px 1.5px 0.5px lighten(transparentize($button, 0.8), 20%),
+      inset 0 1px 0.5px 1px transparentize($button, 0.8);
+
+    &:after {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      content: "";
+      display: block;
+      margin: auto;
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      background-image: radial-gradient(
+        at 65% 20%,
+        lighten($button, 35%),
+        darken($button, 5%) 80%,
+        darken($button, 25%) 100%
+      );
+      box-shadow: inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%);
+    }
   }
 }

@@ -88,8 +88,7 @@ body {
     }
 
     .joystick.outer {
-      position: absolute;
-      top: 80px;
+      top: 60px;
       right: 32px;
     }
 
@@ -172,9 +171,9 @@ body {
     }
 
     .joystick.outer {
-      position: absolute;
       top: 180px;
       left: 35px;
+      transform: translateX(-3px);
     }
   }
 }
