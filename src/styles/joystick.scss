@@ -2,33 +2,46 @@
   background-color: $button;
 
   &.outer {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    box-shadow: 0 0 1px 1px $darkest,
-      // Outter Shadow
-        -0.5px 1px 1px $darkest,
-      // Lower Left Drop Shadow
-        inset 1px 0.75px 1px darken($button, 10%),
+    box-shadow: 0 0 0 0.5px darken($button, 10%),
+      // Seating
+        0 -0.5px 3px 1px darken($button, 15%),
+      // Seating Edge
+        inset 1px 0.75px 1px $button,
       // Upper Left - Dark,
         inset -1.5px -2px 3px lighten($darkest, 15%),
       // Lower Right - Dark
         inset 2px -3px 4px darken($button, 10%),
       // Lower Left - Dark
-        inset -1px 1.5px 3px $button,
+        inset -1px 1.5px 3px lighten($button, 5%),
       // Upper Right - Dark
         inset 3px 2px 3px $button,
-      inset -1.5px 3px 8px lighten($button, 70%),
-      inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%),
+      // Upper Left - Curve
+        inset -1.5px 3px 8px lighten($button, 70%),
+      // Main Curve
+        inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%),
       // Bottom Curve
-        inset -2px 9px 30px lighten(
-          transparentize($darkest, 0.5),
-          40%
-        ); // Top Curve
+        inset -2px 9px 30px lighten(transparentize($darkest, 0.5), 40%),
+      // Top Curve
+        -3px 5px 10px transparentize($darkest, 0.3); // Drop Shadow
+
+    &:after {
+      height: 55px;
+      width: 55px;
+      content: "";
+      background-position: center;
+      background-repeat: no-repeat;
+      // background-color: $button;
+      background-size: 2.75px 100%, 100% 2.75px;
+      background-image: linear-gradient(to bottom, $button, $darkest),
+        linear-gradient(to left, $button, $darkest);
+    }
   }
 
   &.inner {
