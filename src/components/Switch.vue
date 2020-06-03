@@ -3,7 +3,7 @@
     <div class="switch" aria-label="Switch Web Illustration Exercise">
       <div class="controller left">
         <div class="minus"></div>
-        <div class="joystick outer"><div class="joystick inner"></div></div>
+        <joystick></joystick>
         <div class="button-container">
           <div class="row">
             <div class="button arrow up"></div>
@@ -42,7 +42,7 @@
             <div class="button letter b down"></div>
           </div>
         </div>
-        <div class="joystick outer"><div class="joystick inner"></div></div>
+        <joystick></joystick>
         <div class="home"></div>
         <div class="bumper right"></div>
       </div>
@@ -53,7 +53,14 @@
 </template>
 
 <script>
-module.exports = {};
+import Joystick from "./Joystick";
+
+export default {
+  name: "SwitchIllustration",
+  components: {
+    Joystick
+  }
+};
 </script>
 
 <style lang="scss" src="../switch.scss"></style>
