@@ -262,7 +262,6 @@ $arrowBase: 8px solid $arrowColor;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    left: -1px;
     background: var.$button;
     box-shadow: inset -0.25px 0.5px 0.5px var.$darkest,
       inset 0.25px -0.25px 0.5px lighten(var.$button, 35%);
