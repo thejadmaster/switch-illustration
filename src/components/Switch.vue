@@ -4,18 +4,7 @@
       <div class="controller left">
         <div class="minus"></div>
         <joystick></joystick>
-        <div class="button-container">
-          <div class="row">
-            <div class="button arrow up"></div>
-          </div>
-          <div class="row">
-            <div class="button arrow left"></div>
-            <div class="button arrow right"></div>
-          </div>
-          <div class="row">
-            <div class="button arrow down"></div>
-          </div>
-        </div>
+        <buttons isDpad></buttons>
         <div class="screenshot"></div>
         <div class="bumper left"></div>
       </div>
@@ -32,18 +21,14 @@
         <div class="plus-container">
           <div class="plus"></div>
         </div>
-        <div class="button-container">
-          <div class="row">
-            <div class="button letter x up"></div>
-          </div>
-          <div class="row">
-            <div class="button letter y left"></div>
-            <div class="button letter a right"></div>
-          </div>
-          <div class="row">
-            <div class="button letter b down"></div>
-          </div>
-        </div>
+        <buttons
+          up="X"
+          right="A"
+          down="B"
+          left="Y"
+          font="0.85em Lato"
+          font-url="/font/Lato/Lato-Regular.ttf"
+        ></buttons>
         <joystick></joystick>
         <div class="home"></div>
         <div class="bumper right"></div>
@@ -56,11 +41,15 @@
 
 <script>
 import Joystick from "./Joystick";
+import Buttons from "./Buttons";
 
 export default {
   name: "SwitchIllustration",
   components: {
     Joystick
+    Joystick,
+    Buttons
+  },
   }
 };
 </script>
