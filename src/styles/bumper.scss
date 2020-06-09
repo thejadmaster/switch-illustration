@@ -1,9 +1,11 @@
+@use 'variables' as var;
+
 .bumper {
   display: block;
   position: absolute;
   z-index: -5;
   top: -4px;
-  background-color: $button;
+  background-color: var.$button;
   width: 85%;
   height: 70px;
 
@@ -12,15 +14,15 @@
     // 90% 10% 20% 80% / 60% 45% 55% 40%
     border-radius: 95px 4px 0 4px / 70px 4px 0 4px;
     // border-radius: 110px 110px 0 0;
-    box-shadow: inset -1px 1px 3px lighten($button, 25%);
+    box-shadow: inset -1px 1px 3px lighten(var.$button, 25%);
     left: 2px;
   }
 
   &.right {
     // border-radius: 2px 90px 2px 2px;
     border-radius: 4px 95px 0 4px / 4px 70px 0 4px;
-    box-shadow: inset 0px 1px 3px lighten($button, 25%),
-      inset -1px 0px 3px lighten($button, 25%);
+    box-shadow: inset 0px 1px 3px lighten(var.$button, 25%),
+      inset -1px 0px 3px lighten(var.$button, 25%);
     right: 2px;
   }
 }

@@ -1,5 +1,7 @@
+@use 'variables' as var;
+
 .joystick {
-  background-color: $button;
+  background-color: var.$button;
 
   &.outer {
     position: absolute;
@@ -9,27 +11,27 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.5px darken($button, 10%),
+    box-shadow: 0 0 0 0.5px darken(var.$button, 10%),
       // Seating
-        0 -0.5px 3px 1px darken($button, 15%),
+        0 -0.5px 3px 1px darken(var.$button, 15%),
       // Seating Edge
-        inset 1px 0.75px 1px $button,
+        inset 1px 0.75px 1px var.$button,
       // Upper Left - Dark,
-        inset -1.5px -2px 3px lighten($darkest, 15%),
+        inset -1.5px -2px 3px lighten(var.$darkest, 15%),
       // Lower Right - Dark
-        inset 2px -3px 4px darken($button, 10%),
+        inset 2px -3px 4px darken(var.$button, 10%),
       // Lower Left - Dark
-        inset -1px 1.5px 3px lighten($button, 5%),
+        inset -1px 1.5px 3px lighten(var.$button, 5%),
       // Upper Right - Dark
-        inset 3px 2px 3px $button,
+        inset 3px 2px 3px var.$button,
       // Upper Left - Curve
-        inset -1.5px 3px 8px lighten($button, 70%),
+        inset -1.5px 3px 8px lighten(var.$button, 70%),
       // Main Curve
-        inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%),
+        inset 2px -9px 30px lighten(transparentize(var.$darkest, 0.5), 10%),
       // Bottom Curve
-        inset -2px 9px 30px lighten(transparentize($darkest, 0.5), 40%),
+        inset -2px 9px 30px lighten(transparentize(var.$darkest, 0.5), 40%),
       // Top Curve
-        -3px 5px 10px transparentize($darkest, 0.3); // Drop Shadow
+        -3px 5px 10px transparentize(var.$darkest, 0.3); // Drop Shadow
 
     &:after {
       height: 55px;
@@ -37,10 +39,10 @@
       content: '';
       background-position: center;
       background-repeat: no-repeat;
-      // background-color: $button;
+      // background-color: var.$button;
       background-size: 2.75px 100%, 100% 2.75px;
-      background-image: linear-gradient(to bottom, $button, $darkest),
-        linear-gradient(to left, $button, $darkest);
+      background-image: linear-gradient(to bottom, var.$button, var.$darkest),
+        linear-gradient(to left, var.$button, var.$darkest);
     }
   }
 
@@ -51,17 +53,25 @@
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: $button;
+    background-color: var.$button;
     background-size: 2.75px 100%, 100% 2.75px, 100%;
     background-image: linear-gradient(
         to bottom,
-        lighten($button, 25%),
-        $darkest
+        lighten(var.$button, 25%),
+        var.$darkest
       ),
-      linear-gradient(to left, lighten($button, 15%), lighten($darkest, 5%)),
-      linear-gradient(20deg, lighten($button, 25%), darken($button, 60%));
-    box-shadow: inset 0 -1px 1.5px 0.5px lighten(transparentize($button, 0.8), 20%),
-      inset 0 1px 0.5px 1px transparentize($button, 0.8);
+      linear-gradient(
+        to left,
+        lighten(var.$button, 15%),
+        lighten(var.$darkest, 5%)
+      ),
+      linear-gradient(
+        20deg,
+        lighten(var.$button, 25%),
+        darken(var.$button, 60%)
+      );
+    box-shadow: inset 0 -1px 1.5px 0.5px lighten(transparentize(var.$button, 0.8), 20%),
+      inset 0 1px 0.5px 1px transparentize(var.$button, 0.8);
 
     &:after {
       position: absolute;
@@ -75,11 +85,11 @@
       border-radius: 50%;
       background-image: radial-gradient(
         at 65% 20%,
-        lighten($button, 35%),
-        darken($button, 5%) 80%,
-        darken($button, 25%) 100%
+        lighten(var.$button, 35%),
+        darken(var.$button, 5%) 80%,
+        darken(var.$button, 25%) 100%
       );
-      box-shadow: inset 2px -9px 30px lighten(transparentize($darkest, 0.5), 10%);
+      box-shadow: inset 2px -9px 30px lighten(transparentize(var.$darkest, 0.5), 10%);
     }
   }
 }

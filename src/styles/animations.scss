@@ -1,16 +1,6 @@
-.switch {
-  opacity: 0;
-  animation: switch_fade_in 2s ease-in-out forwards,
-    switch_bounce 4s ease-in-out alternate infinite;
-  animation-delay: 1s, 3s;
-}
-.switch-shadow {
-  opacity: 0;
-  animation: switch_shadow_fade_in 2s ease-in-out forwards,
-    switch_shadow_bounce 4s ease-in-out alternate infinite;
-  animation-delay: 1s, 3s;
-}
-
+/*
+ * Switch Animations
+ */
 @keyframes switch_fade_in {
   from {
     opacity: 0;
@@ -31,6 +21,9 @@
   }
 }
 
+/*
+ * Switch Shadow Animations
+ */
 @keyframes switch_shadow_fade_in {
   from {
     opacity: 0;

@@ -1,0 +1,115 @@
+@use 'variables' as var;
+@use 'animations';
+
+.switch {
+  z-index: 10;
+  display: flex;
+  height: 400px;
+  width: 940px;
+  opacity: 0;
+  animation: switch_fade_in 2s ease-in-out forwards,
+    switch_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
+
+.controller {
+  width: 13.34%;
+  height: 100%;
+  position: relative;
+
+  &.left {
+    background-image: linear-gradient(
+      90deg,
+      darken(var.$controllerLeft, 10%),
+      darken(var.$controllerLeft, 5%) 70%,
+      var.$controllerLeft 100%
+    );
+    border-radius: 90px 2px 2px 90px;
+    box-shadow: inset -1px 0px 3px lighten(var.$controllerLeft, 10%),
+      // Right Bezel
+        inset 0px -6px 5px darken(var.$controllerLeft, 15%),
+      // Bottom Bezel
+        inset 3px -4px 6px darken(var.$controllerLeft, 25%),
+      // Left Bezel
+        inset -1.5px 5px 4px lighten(var.$controllerLeft, 25%); //Top Bezel
+
+    .minus {
+      position: absolute;
+      top: 32px;
+      right: 8px;
+    }
+
+    .joystick.outer {
+      top: 60px;
+      right: 32px;
+    }
+
+    .button-container {
+      top: 155px;
+      left: 20px;
+    }
+
+    .screenshot {
+      position: absolute;
+      top: 265px;
+      right: 25px;
+    }
+  }
+
+  &.right {
+    background-image: linear-gradient(
+      90deg,
+      var.$controllerRight,
+      lighten(var.$controllerRight, 5%) 30%,
+      lighten(var.$controllerRight, 10%) 100%
+    );
+    border-radius: 2px 90px 90px 2px;
+    box-shadow: inset -5px 3px 5px lighten(var.$controllerRight, 20%),
+      // Right Bezel
+        inset 0px -6px 5px darken(var.$controllerRight, 15%),
+      // Bottom Bezel
+        inset 1px 0px 3px darken(var.$controllerRight, 25%),
+      // Left Bezel
+        inset 0px 5px 6px lighten(var.$controllerRight, 25%); //Top Bezel
+
+    .plus-container {
+      position: relative;
+      z-index: 10;
+      top: 32px;
+      left: 8px;
+    }
+
+    .button-container {
+      top: 55px;
+      right: 20px;
+    }
+
+    .joystick.outer {
+      top: 180px;
+      left: 35px;
+      transform: translateX(-3px);
+    }
+
+    .home {
+      position: absolute;
+      top: 260px;
+      left: 14px;
+      transform: scale(0.75);
+    }
+  }
+}
+
+.switch-shadow {
+  z-index: 1;
+  width: 800px;
+  height: 70px;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: black;
+  border-radius: 30px 180px;
+  box-shadow: 0px 0px 30px 30px black;
+  opacity: 0;
+  animation: switch_shadow_fade_in 2s ease-in-out forwards,
+    switch_shadow_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
