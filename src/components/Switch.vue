@@ -46,7 +46,6 @@ import Buttons from "./Buttons";
 export default {
   name: "SwitchIllustration",
   components: {
-    Joystick
     Joystick,
     Buttons
   },

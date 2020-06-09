@@ -2,13 +2,13 @@
  * Inspired By fossheim in https://codepen.io/fossheim/pen/jObGxQQ 
  */
 
-@import "styles/fonts.scss";
-@import "styles/variables.scss";
-@import "styles/screen.scss";
-@import "styles/buttons.scss";
-@import "styles/joystick.scss";
-@import "styles/bumper.scss";
-@import "styles/media_queries.scss";
+@import 'styles/fonts.scss';
+@import 'styles/variables.scss';
+@import 'styles/screen.scss';
+@import 'styles/buttons.scss';
+@import 'styles/joystick.scss';
+@import 'styles/bumper.scss';
+@import 'styles/media_queries.scss';
 
 * {
   padding: 0;
@@ -122,7 +122,7 @@ body {
 
     .plus:before {
       position: absolute;
-      content: "";
+      content: '';
       z-index: -1;
       width: 6px;
       height: 21px;
@@ -155,7 +155,7 @@ body {
 
     .plus:after {
       position: absolute;
-      content: "";
+      content: '';
       width: 7px;
       height: 21px;
       left: 7px;

@@ -34,7 +34,7 @@
     &:after {
       height: 55px;
       width: 55px;
-      content: "";
+      content: '';
       background-position: center;
       background-repeat: no-repeat;
       // background-color: $button;
@@ -55,7 +55,7 @@
     background-size: 2.75px 100%, 100% 2.75px, 100%;
     background-image: linear-gradient(
         to bottom,
-        lighten($button, 35%),
+        lighten($button, 25%),
         $darkest
       ),
       linear-gradient(to left, lighten($button, 15%), lighten($darkest, 5%)),
@@ -67,7 +67,7 @@
       position: absolute;
       top: 2px;
       left: 2px;
-      content: "";
+      content: '';
       display: block;
       margin: auto;
       width: 41px;
