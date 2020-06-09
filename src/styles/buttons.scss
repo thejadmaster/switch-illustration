@@ -7,7 +7,7 @@ $arrowBase: 8px solid $arrowColor;
   width: 90px;
   height: 90px;
   color: $buttonText;
-  font-family: "Lato", "Nintendo-Switch-UI";
+  font-family: 'Lato', 'Nintendo-Switch-UI';
   font-size: 0.85em;
   font-weight: 500;
   font-smooth: antialiased;
@@ -61,7 +61,7 @@ $arrowBase: 8px solid $arrowColor;
   &.arrow:after {
     position: relative;
     display: block;
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-right: $arrowSide;
@@ -101,6 +101,10 @@ $arrowBase: 8px solid $arrowColor;
   }
 
   &.letter {
+    padding-bottom: 2px;
+    padding-left: 1px;
+  }
+}
     &:after {
       margin-bottom: 2px;
       margin-left: 1px;
