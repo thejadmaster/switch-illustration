@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="switch" aria-label="Switch Web Illustration Exercise">
+    <div class="switch" v-on:click="toggleBounce" aria-label="Switch Web Illustration Exercise">
       <div class="controller left">
         <div class="minus"></div>
         <joystick></joystick>
@@ -49,6 +49,21 @@ export default {
     Joystick,
     Buttons
   },
+  data: {
+    bounceRunning: true,
+    switchAnimationState: "running, running",
+    switchShadowAnimationState: "running, running"
+  },
+  methods: {
+    toggleBounce: function() {
+      if (this.bounceRunning) {
+        this.switchAnimationState = "paused, paused";
+        this.switchShadowAnimationState = "paused, paused";
+      } else {
+        this.switchAnimationState = "running, running";
+        this.switchShadowAnimationState = "running, running";
+      }
+    }
   }
 };
 </script>

@@ -1,0 +1,54 @@
+.switch {
+  opacity: 0;
+  animation: switch_fade_in 2s ease-in-out forwards,
+    switch_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
+.switch-shadow {
+  opacity: 0;
+  animation: switch_shadow_fade_in 2s ease-in-out forwards,
+    switch_shadow_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
+
+@keyframes switch_fade_in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes switch_bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes switch_shadow_fade_in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(-50px);
+  }
+  to {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes switch_shadow_bounce {
+  from {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0.05;
+    transform: scale(0.7) translateY(50px);
+  }
+}
