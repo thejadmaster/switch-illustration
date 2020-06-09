@@ -96,6 +96,12 @@ body {
       top: 155px;
       left: 20px;
     }
+
+    .screenshot {
+      position: absolute;
+      top: 265px;
+      right: 25px;
+    }
   }
 
   &.right {
@@ -174,6 +180,13 @@ body {
       top: 180px;
       left: 35px;
       transform: translateX(-3px);
+    }
+
+    .home {
+      position: absolute;
+      top: 260px;
+      left: 14px;
+      transform: scale(0.75);
     }
   }
 }

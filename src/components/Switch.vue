@@ -30,7 +30,9 @@
           font-url="/font/Lato/Lato-Regular.ttf"
         ></buttons>
         <joystick></joystick>
-        <div class="home"></div>
+        <div class="home">
+          <div class="home-icon"></div>
+        </div>
         <div class="bumper right"></div>
       </div>
     </div>
