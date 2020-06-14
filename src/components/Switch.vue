@@ -53,10 +53,12 @@ export default {
     Buttons,
     LogoContainer,
   },
-  data: {
-    bounceRunning: true,
+  data() {
+    return {
+      bounceRunning: true,
       switchAnimationState: 'running, running',
       switchShadowAnimationState: 'running, running',
+    };
   },
   methods: {
     toggleBounce: function() {
