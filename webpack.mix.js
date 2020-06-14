@@ -1,4 +1,4 @@
-let mix = require("laravel-mix");
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +11,10 @@ let mix = require("laravel-mix");
  |
  */
 
-mix.js("src/switch.js", "dist").setPublicPath("dist");
+mix
+  .js('src/switch.js', 'dist')
+  .setPublicPath('dist')
+  .copy('src/img', 'dist/img');
 
 // Full API
 // mix.js(src, output);
