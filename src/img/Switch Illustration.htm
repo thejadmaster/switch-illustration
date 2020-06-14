@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Switch Illustration</title>
+  <script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    __insertDappDetected()
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script><style>* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  position: relative;
+  background-image: radial-gradient(at 45% 55%, white 0%, #dddddd 50%, #aaa 90%);
+}
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * Switch Animations
+ */
+@keyframes switch_fade_in {
+from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-50px);
+}
+to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+}
+@keyframes switch_bounce {
+from {
+    transform: translateY(0);
+}
+to {
+    transform: translateY(-50px);
+}
+}
+/*
+ * Switch Shadow Animations
+ */
+@keyframes switch_shadow_fade_in {
+from {
+    opacity: 0;
+    transform: scale(0.7) translateY(-50px);
+}
+to {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+}
+}
+@keyframes switch_shadow_bounce {
+from {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+}
+to {
+    opacity: 0.05;
+    transform: scale(0.7) translateY(50px);
+}
+}
+.switch {
+  z-index: 10;
+  display: flex;
+  height: 400px;
+  width: 940px;
+  opacity: 0;
+  animation: switch_fade_in 2s ease-in-out forwards, switch_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
+.controller {
+  width: 13.34%;
+  height: 100%;
+  position: relative;
+}
+.controller.left {
+  background-image: linear-gradient(90deg, #00dbfc, #17e1ff 70%, #30e4ff 100%);
+  border-radius: 90px 2px 2px 90px;
+  box-shadow: inset -1px 0px 3px #63ebff, inset 0px -6px 5px #00c5e3, inset 3px -4px 6px #0099b0, inset -1.5px 5px 4px #b0f5ff;
+}
+.controller.left .minus {
+  position: absolute;
+  top: 32px;
+  right: 8px;
+}
+.controller.left .joystick.outer {
+  top: 60px;
+  right: 32px;
+}
+.controller.left .button-container {
+  top: 155px;
+  left: 20px;
+}
+.controller.left .screenshot {
+  position: absolute;
+  top: 265px;
+  right: 25px;
+}
+.controller.right {
+  background-image: linear-gradient(90deg, #ff1e1e, #ff3838 30%, #ff5151 100%);
+  border-radius: 2px 90px 90px 2px;
+  box-shadow: inset -5px 3px 5px #ff8484, inset 0px -6px 5px #d10000, inset 1px 0px 3px #9e0000, inset 0px 5px 6px #ff9e9e;
+}
+.controller.right .plus-container {
+  position: relative;
+  z-index: 10;
+  top: 32px;
+  left: 8px;
+}
+.controller.right .button-container {
+  top: 55px;
+  right: 20px;
+}
+.controller.right .joystick.outer {
+  top: 180px;
+  left: 35px;
+  transform: translateX(-3px);
+}
+.controller.right .home {
+  position: absolute;
+  top: 260px;
+  left: 14px;
+  transform: scale(0.75);
+}
+.switch-shadow {
+  z-index: 1;
+  width: 800px;
+  height: 70px;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: black;
+  border-radius: 30px 180px;
+  box-shadow: 0px 0px 30px 30px black;
+  opacity: 0;
+  animation: switch_shadow_fade_in 2s ease-in-out forwards, switch_shadow_bounce 4s ease-in-out alternate infinite;
+  animation-delay: 1s, 3s;
+}
+.screen-container {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 73.34%;
+  background-color: #252222;
+  box-shadow: inset 0px 5px 5px #827777, inset 0 -5px 7px black;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+.screen-container .glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  width: 95%;
+  margin: 10px auto;
+  background-color: #1a1a1a;
+  box-shadow: inset -0.5px 0.5px 1px black, inset 0.5px -0.5px #4d4d4d;
+  border-radius: 10px;
+}
+.screen-container .glass .screen {
+  height: 320px;
+  width: 566px;
+  background-image: linear-gradient(60deg, #0a0a0a, #283333);
+}
+.screen-container .volume {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  top: -2px;
+  background-image: linear-gradient(#5a5353, black);
+  border-radius: 2px 2px 0px 0px;
+  box-shadow: inset 0 1px 1px #789595;
+}
+.screen-container .volume.left {
+  left: 60px;
+}
+.screen-container .volume.right {
+  left: 96px;
+}
+
+/*
+ * Main Font for Switch Buttons
+ */
+@font-face {
+  font-family: "Nintendo-Switch-UI";
+  src: url(/fonts/Nintendo-Switch-UI.ttf.woff?7a282f38226c7440be25f8195e42e0c0) format("woff"), url(/fonts/Nintendo-Switch-UI.ttf.svg?50009020d96a7658620acd1deb5372bb#Nintendo-Switch-UI) format("svg"), url(/fonts/Nintendo-Switch-UI.ttf.eot?a21b8c2ed4a232fd65485e83857f234a), url(/fonts/Nintendo-Switch-UI.ttf.eot?a21b8c2ed4a232fd65485e83857f234a?#iefix) format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(/fonts/Lato-Regular.ttf?9919edff6283018571add043109dc20b);
+  font-weight: normal;
+  font-style: normal;
+}
+/*
+ * Vue.js Logo Font
+ */
+@font-face {
+  font-family: "Dosis";
+  src: url(/fonts/Dosis-Medium.ttf?ae38bf61b33f66caadff0e0399ac9b58);
+  font-weight: normal;
+  font-style: normal;
+}
+.button-container {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  color: #bba;
+  font-family: "Lato", "Nintendo-Switch-UI";
+  font-size: 0.85em;
+  font-weight: 500;
+  font-smooth: antialiased;
+}
+.button-container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+.minus {
+  width: 21px;
+  height: 7px;
+  background-color: #283333;
+  box-shadow: -0.5px 0 1px 0.5px #131111, -0.5px 0.5px 1px black, -1px 1px 3px black, inset -0.5px 0.5px 1px #c4c4c4;
+}
+.plus {
+  position: relative;
+  width: 21px;
+  height: 7px;
+  background-color: #283333;
+  box-shadow: 0 0 0.5px 0.5px #131111, -1px 1px 2px #0b0a0a, inset -0.25px 0.5px 0.5px #c4c4c4;
+}
+.plus:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  width: 6px;
+  height: 21px;
+  left: 8px;
+  top: -7px;
+  background-color: #283333;
+  box-shadow: -0.5px 0 1px 0.5px #131111, 0px 1px 2px #131111, -1px 1px 2px #131111, inset 1px -1px 1px #aaa;
+}
+.plus:after {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 21px;
+  left: 7px;
+  top: -7px;
+  background-color: #283333;
+  box-shadow: inset 0px 0.5px 0px #aaa;
+}
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #3e5050, #607a7a 100%);
+  box-shadow: 0 0 1px 1px black, -0.5px 0.5px 4px black, inset -1px 0.5px 0.5px #283333, inset 1.25px 0.75px 1px #283333, inset 1.25px 0 1.5px black, inset -1.25px -0.75px 1.5px black, inset 1px -3px 10px rgba(26, 26, 26, 0.5), inset -1px 3px 10px rgba(102, 102, 102, 0.5), inset 1px -2.5px 1px black, inset -0.5px 2.5px 1.5px #a3b7b7, -1px 3px 5px black;
+}
+.button.arrow:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 4.8px solid transparent;
+  border-left: 4.8px solid transparent;
+  border-bottom: 8px solid #1a1a1a;
+}
+.button.up {
+  margin: auto;
+}
+.button.up.arrow:after {
+  transform: rotate(360deg);
+  margin-bottom: 2px;
+}
+.button.right {
+  align-self: center;
+}
+.button.right.arrow:after {
+  transform: rotate(90deg);
+  margin-left: 2px;
+}
+.button.down {
+  margin: auto;
+}
+.button.down.arrow:after {
+  transform: rotate(180deg);
+  margin-top: 2px;
+}
+.button.left {
+  align-self: center;
+}
+.button.left.arrow:after {
+  transform: rotate(270deg);
+  margin-right: 2px;
+}
+.button.letter {
+  padding-bottom: 2px;
+  padding-left: 1px;
+}
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-image: radial-gradient(at 75% 25%, #87a0a0, #607a7a);
+  border-radius: 50%;
+  box-shadow: 0 0.5px 0 1px #060808, -0.5px 1px 4px 1px #060808, inset -0.5px 0.5px 3px #b1c2c2, inset 0.5px -0.5px 4px #283333;
+}
+.home:before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 0;
+  z-index: 4;
+  top: 9px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 9px solid black;
+  box-shadow: 0 0.25px #789595;
+}
+.home:after {
+  position: relative;
+  opacity: 1;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #283333;
+  border-radius: 50%;
+  box-shadow: inset 0.5px -0.5px black, inset -0.25px 0.25px black;
+}
+.home .home-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 16px;
+  height: 10px;
+  z-index: 5;
+  top: 18px;
+  background-color: black;
+  box-shadow: inset 0 -0.25px #789595;
+}
+.home .home-icon:after {
+  position: relative;
+  content: "";
+  width: 6px;
+  height: 5px;
+  z-index: 8;
+  top: -2.5px;
+  background-color: #283333;
+  box-shadow: inset -0.25px 0.25px 0.25px #789595;
+}
+.screenshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  background-image: linear-gradient(45deg, #334141, #4a5e5e 100%);
+  box-shadow: 0 0 0 1px black, inset -0.5px 0.5px 1px #789595, inset 0.5px -0.5px 1px #060808;
+}
+.screenshot:after {
+  position: relative;
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #283333;
+  box-shadow: inset -0.25px 0.5px 0.5px black, inset 0.25px -0.25px 0.5px #789595;
+}
+.joystick {
+  background-color: #283333;
+}
+.joystick.outer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5px #121616, 0 -0.5px 3px 1px #060808, inset 1px 0.75px 1px #283333, inset -1.5px -2px 3px #262626, inset 2px -3px 4px #121616, inset -1px 1.5px 3px #334141, inset 3px 2px 3px #283333, inset -1.5px 3px 8px #dce4e4, inset 2px -9px 30px rgba(26, 26, 26, 0.5), inset -2px 9px 30px rgba(102, 102, 102, 0.5), -3px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.joystick.outer:after {
+  height: 55px;
+  width: 55px;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2.75px 100%, 100% 2.75px;
+  background-image: linear-gradient(to bottom, #283333, black), linear-gradient(to left, #283333, black);
+}
+.joystick.inner {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #283333;
+  background-size: 2.75px 100%, 100% 2.75px, 100%;
+  background-image: linear-gradient(to bottom, #607a7a, black), linear-gradient(to left, #4a5e5e, #0d0d0d), linear-gradient(20deg, #607a7a, black);
+  box-shadow: inset 0 -1px 1.5px 0.5px rgba(85, 108, 108, 0.2), inset 0 1px 0.5px 1px rgba(40, 51, 51, 0.2);
+}
+.joystick.inner:after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  content: "";
+  display: block;
+  margin: auto;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  background-image: radial-gradient(at 65% 20%, #789595, #1d2525 80%, black 100%);
+  box-shadow: inset 2px -9px 30px rgba(26, 26, 26, 0.5);
+}
+.bumper {
+  display: block;
+  position: absolute;
+  z-index: -5;
+  top: -4px;
+  background-color: #283333;
+  width: 85%;
+  height: 70px;
+}
+.bumper.left {
+  border-radius: 95px 4px 0 4px/70px 4px 0 4px;
+  box-shadow: inset -1px 1px 3px #607a7a;
+  left: 2px;
+}
+.bumper.right {
+  border-radius: 4px 95px 0 4px/4px 70px 0 4px;
+  box-shadow: inset 0px 1px 3px #607a7a, inset -1px 0px 3px #607a7a;
+  right: 2px;
+}
+.logo-container {
+  position: relative;
+  top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100vw;
+  max-width: 1200px;
+}
+.logo {
+  height: 100px;
+  object-fit: contain;
+}
+.vue-logo-container {
+  width: 300px;
+}
+.vue-logo-container .logo {
+  float: left;
+}
+.vue-text {
+  font-family: "Dosis", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 72px;
+  float: left;
+}
+@media (max-width: 576px) {
+body {
+    transform: scale(0.3);
+}
+}
+@media (min-width: 576px) {
+body {
+    transform: scale(0.5);
+}
+}
+@media (min-width: 768px) {
+body {
+    transform: scale(0.7);
+}
+}
+@media (min-width: 992px) {
+body {
+    transform: scale(0.9);
+}
+}
+@media (min-width: 1200px) {
+body {
+    transform: scale(1);
+}
+}
+/* 
+ * Inspired By
+ *     - fossheim in https://codepen.io/fossheim/pen/jObGxQQ
+ *     - joshbader in https://codepen.io/joshbader/pen/mjZzGM
+ *
+ * TODO: Change main to include the cutouts for the top corners.
+ * TODO: Change the gradients and box-shadow to integrate the lighting variables.
+ */</style><style type="text/css">@font-face { font-family: Lato; src: url("chrome-extension://eanemkknjlockcgpfmmnlmbdkkijocei/css/lato.ttf"); }@font-face { font-family: FontAwesome; src: url("chrome-extension://eanemkknjlockcgpfmmnlmbdkkijocei/fonts/fontawesome-webfont.ttf"); }</style><script charset="utf-8" src="./Switch Illustration_files/switch.fdb47748dd18e9608ff5.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.7ad8abff7e8c5943dc5c.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.0db40fecd532326da2eb.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.3a7fc415db7bfcd0922e.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.75ea7db320f5213f3d12.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.eacf95c55224011784d1.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.44b28b43063e8a593eb5.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.82836736c7a8df3cda21.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.9351d0abcc399aa8eb29.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.fd359041fd290d21147e.hot-update.js"></script><script charset="utf-8" src="./Switch Illustration_files/switch.5ac161518f2342c54c5d.hot-update.js"></script></head>
+  <body data-gr-c-s-loaded="true" pwa-launched="">
+    <div id="switch-illustration"><div class="container"><div aria-label="Switch Web Illustration Exercise" class="switch"><div class="controller left"><div class="minus"></div> <div class="joystick outer"><div class="joystick inner"></div></div> <div class="button-container"><div class="row"><div class="button up arrow"></div></div> <div class="row"><div class="button left arrow"></div> <div class="button right arrow"></div></div> <div class="row"><div class="button down arrow"></div></div></div> <div class="screenshot"></div> <div class="bumper left"></div></div> <div class="screen-container"><div class="glass"><div class="screen"></div></div> <div class="volume left"></div> <div class="volume right"></div></div> <div class="controller right"><div class="plus-container"><div class="plus"></div></div> <div class="button-container"><div class="row"><div class="button up letter">X</div></div> <div class="row"><div class="button left letter">Y</div> <div class="button right letter">A</div></div> <div class="row"><div class="button down letter">B</div></div></div> <div class="joystick outer"><div class="joystick inner"></div></div> <div class="home"><div class="home-icon"></div></div> <div class="bumper right"></div></div></div> <div class="switch-shadow"></div> <div class="logo-container"><a href="https://sass-lang.com/" target="_blank"><img src="./Switch Illustration_files/Sass-Logo_Black.png" alt="Sass Homepage" class="sass-logo logo"></a> <a href="https://github.com/thejadmaster/switch-illustration" target="_blank" class="github"><img src="./Switch Illustration_files/GitHub_Logo.png" alt="Switch Illustration GitHub Repository" class="github-logo logo"> <img src="./Switch Illustration_files/Octocat.png" alt="Switch Illustration GitHub Repository" class="github-octocat logo"></a> <a href="https://vuejs.org/" target="_blank"><div class="vue-logo-container"><img src="./Switch Illustration_files/vue_logo.png" alt="VueJS Homepage" class="logo"> <div class="vue-text">Vue.js</div></div></a></div></div></div>
+    <script src="./Switch Illustration_files/vue.js"></script>
+    <script src="./Switch Illustration_files/switch.js"></script>
+  
+
+</body><div pwa-words-popup="" class="pwa-words-popup" style="display: none !important;">   <div class="inner">   <div class="background">       <div class="back"></div>       <div popup-corner="" class="corner"></div>   </div>   <div class="content">       <div class="wrapper" style="height: auto;">           <h1 popup-header="" class="reset"></h1>           <div class="help" style="display: none;"></div>           <span popup-suggestions=""></span>           <div class="thesaurus"></div>       </div>       <div class="buttons">           <a href="http://prowritingaid.com/" class="go-to-website" target="_blank" pd-outer-link="">ProWritingAid.com</a>           <a href="http://localhost:8080/#" class="show-thesaurus pwa-hidden" style="display: block !important;">Thesaurus</a>           <a href="http://localhost:8080/#" class="show-suggestions" style="display: none !important;">Suggestions</a>           <button class="add-to-dictionary">Disable Rule</button>           <button class="ignore">Ignore</button>       </div>   </div>   </div></div><div pwa-options-layer="" class="pwa-options-layer" style="display: none;"><div class="dark-overlay"></div><div class="options-window-wrapper"><div class="options-window"><div class="content"><div class="pwa-logo-48x48"></div><h1>ProWritingAid Settings</h1><h5>Writing style</h5><select class="writing-style-drop-down"><option value="1">General</option><option value="2">Academic</option><option value="3">Business</option><option value="4">Technical</option><option value="5">Creative</option><option value="6">Casual</option><option value="7">Web</option></select><h5>Site status</h5><span class="enable-for-site-status">Enabled</span><a class="enable-for-site" href="javascript:true;">Enable</a><a class="disable-for-site" href="javascript:true;">Disable</a><a class="contacts" href="https://prowritingaid.com/en/Home/Contact" target="_blank">Contact Support</a></div><div class="buttons"><button class="save"><span class="label">save</span></button><button class="cancel"><span class="label">cancel</span></button></div></div></div></div></html>
