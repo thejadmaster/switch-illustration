@@ -8,6 +8,7 @@ An Illustration of a Switch Console built in HTML and CSS, rendered using Vue.JS
 - Build a means by which to update color and light across the illustration.
 - ~~Componetize these tools using VueJS.~~
 - Have a means by which to switch between colors and lighting templates.
+- Make established elements fully reactive.
 
 ## Stretch goals (may not be feasible with this tech stack)
 
