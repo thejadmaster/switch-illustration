@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <div class="switch" v-on:click="toggleBounce" aria-label="Switch Web Illustration Exercise">
+    <div
+      class="switch"
+      v-on:click="toggleBounce"
+      aria-label="Switch Web Illustration Exercise"
+    >
       <div class="controller left">
         <div class="minus"></div>
         <joystick></joystick>
@@ -21,14 +25,7 @@
         <div class="plus-container">
           <div class="plus"></div>
         </div>
-        <buttons
-          up="X"
-          right="A"
-          down="B"
-          left="Y"
-          font="0.85em Lato"
-          font-url="/font/Lato/Lato-Regular.ttf"
-        ></buttons>
+        <buttons up="X" right="A" down="B" left="Y"></buttons>
         <joystick></joystick>
         <div class="home">
           <div class="home-icon"></div>
@@ -42,31 +39,31 @@
 </template>
 
 <script>
-import Joystick from "./Joystick";
-import Buttons from "./Buttons";
+import Joystick from './Joystick';
+import Buttons from './Buttons';
 
 export default {
-  name: "SwitchIllustration",
+  name: 'SwitchIllustration',
   components: {
     Joystick,
-    Buttons
+    Buttons,
   },
   data: {
     bounceRunning: true,
-    switchAnimationState: "running, running",
-    switchShadowAnimationState: "running, running"
+      switchAnimationState: 'running, running',
+      switchShadowAnimationState: 'running, running',
   },
   methods: {
     toggleBounce: function() {
       if (this.bounceRunning) {
-        this.switchAnimationState = "paused, paused";
-        this.switchShadowAnimationState = "paused, paused";
+        this.switchAnimationState = 'paused, paused';
+        this.switchShadowAnimationState = 'paused, paused';
       } else {
-        this.switchAnimationState = "running, running";
-        this.switchShadowAnimationState = "running, running";
+        this.switchAnimationState = 'running, running';
+        this.switchShadowAnimationState = 'running, running';
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
