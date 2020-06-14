@@ -35,18 +35,23 @@
     </div>
 
     <div class="switch-shadow"></div>
+
+    <div class="built-in">Built In...</div>
+    <logo-container></logo-container>
   </div>
 </template>
 
 <script>
 import Joystick from './Joystick';
 import Buttons from './Buttons';
+import LogoContainer from './LogoContainer';
 
 export default {
   name: 'SwitchIllustration',
   components: {
     Joystick,
     Buttons,
+    LogoContainer,
   },
   data: {
     bounceRunning: true,
