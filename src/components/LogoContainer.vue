@@ -40,5 +40,22 @@
 
 <script>
 module.exports = {
+  mounted() {
+    this.createLogoShadows();
+  },
+  methods: {
+    createLogoShadows: function() {
+      this.cloneNodeAndChildren('vue', 'shadow-backdrop');
+      this.cloneNodeAndChildren('github', 'shadow-backdrop');
+      this.cloneNodeAndChildren('sass', 'shadow-backdrop');
+    },
+    cloneNodeAndChildren: function(referenceName, addClass) {
+      let clone = this.$refs[referenceName].cloneNode(true);
+      if (typeof addClass !== 'undefined') {
+        clone.classList.add('shadow-backdrop');
+      }
+      this.$refs[referenceName].appendChild(clone);
+    },
+  },
 };
 </script>
