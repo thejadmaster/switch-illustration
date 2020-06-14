@@ -1,5 +1,8 @@
 $fontsPath: 'fonts/';
 
+/*
+ * Main Font for Switch Buttons
+ */
 @font-face {
   font-family: 'Nintendo-Switch-UI';
   src: url($fontsPath+'Nintendo-Switch-UI/Nintendo-Switch-UI.ttf.woff')
@@ -15,6 +18,26 @@ $fontsPath: 'fonts/';
 @font-face {
   font-family: 'Lato';
   src: url($fontsPath+'Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * Vue.js Logo Font
+ */
+@font-face {
+  font-family: 'Dosis';
+  src: url($fontsPath+'Dosis (Vue)/Dosis-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * 
+ */
+@font-face {
+  font-family: 'Allura';
+  src: url($fontsPath+'Allura/Allura-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
