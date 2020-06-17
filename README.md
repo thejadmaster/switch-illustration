@@ -1,6 +1,6 @@
 # Switch Illustration
 
-An Illustration of a Switch Console built in HTML and CSS, rendered using Vue.JS.
+An Illustration of a Switch Console built in HTML and CSS, rendered using Vue.JS. This is a personal project for my portfolio.
 
 ## Goals for this project
 
