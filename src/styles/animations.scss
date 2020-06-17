@@ -4,11 +4,9 @@
 @keyframes switch_fade_in {
   from {
     opacity: 0;
-    transform: scale(0.9) translateY(-50px);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
   }
 }
 
@@ -27,21 +25,45 @@
 @keyframes switch_shadow_fade_in {
   from {
     opacity: 0;
-    transform: scale(0.7) translateY(-50px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 0.15;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes switch_shadow_bounce {
   from {
     opacity: 0.15;
-    transform: scale(1) translateY(0);
+    transform: scale(1) translate(0);
   }
   to {
     opacity: 0.1;
-    transform: scale(0.7) translateY(-20px) translateX(-80px);
+    transform: scale(0.8) translate(-80px, -20px);
+  }
+}
+
+/*
+ * Logo Animations
+ */
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
